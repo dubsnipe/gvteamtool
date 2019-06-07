@@ -8,25 +8,24 @@ For example, I used R to download team and volunteer participation data from the
 
 ## Features
 
-Dashboard
+**Dashboard**
 ![Screenshot 01](/docs/screenshots/01.png)
 
-Team calendar
+**Team calendar**
 ![Screenshot 03](/docs/screenshots/03.png)
 
-Team registry with various metadata fields
+**Team registry with various metadata fields**
 ![Screenshot 06](/docs/screenshots/06.png)
 
-Volunteer tracking and their volunteer engagement history.
+**Volunteer tracking and their volunteer engagement history.**
 ![Screenshot 02](/docs/screenshots/02.png)
 
-Advanced search of teams by GV code, dates of trip and status (active/cancelled), and of volunteers by name, email address or location.
+**Advanced search of teams by GV code, dates of trip and status (active/cancelled), and of volunteers by name, email address or location.**
 ![Screenshot 04](/docs/screenshots/04.png)
 
-Report generation can be limited by date, type of team or name of team.
+**Report generation can be limited by date, type of team or name of team.**
 ![Screenshot 05](/docs/screenshots/05.png)
 
-Also:
 
 # Project status
 
