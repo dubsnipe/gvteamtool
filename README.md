@@ -8,28 +8,31 @@ For example, I used R to download team and volunteer participation data from the
 
 ## Features
 
-**Dashboard**
+### Dashboard
+
 ![Screenshot 01](/docs/screenshots/01.png)
 
-**Team calendar**
+### Team calendar
+
 ![Screenshot 03](/docs/screenshots/03.png)
 
-**Team registry with various metadata fields**
+### Team registry with various metadata fields
+
 ![Screenshot 06](/docs/screenshots/06.png)
 
-**Volunteer tracking and their volunteer engagement history.**
+### Volunteer tracking and their volunteer engagement history.
+
 ![Screenshot 02](/docs/screenshots/02.png)
 
-**Advanced search of teams by GV code, dates of trip and status (active/cancelled), and of volunteers by name, email address or location.**
+### Advanced search of teams by GV code, dates of trip and status (active/cancelled), and of volunteers by name, email address or location.
 ![Screenshot 04](/docs/screenshots/04.png)
 
-**Report generation can be limited by date, type of team or name of team.**
+### Report generation can be limited by date, type of team or name of team.
 ![Screenshot 05](/docs/screenshots/05.png)
-
 
 # Project status
 
-This repo is intended to share work with all HFH GV Hosting Teams that need a tool to record and manage their team participation. For the moment no update is intended from my side since I am leaving the organization, so I encourage you to invite developers to work with you on this project, to fork or push some of your updates to this repo, for the benefit of the community.
+This repo is intended to share work with all HFH GV Hosting Teams that need a tool to record and manage their team participation. For the moment no update is intended from my side since I am leaving the organization, so I encourage you to invite developers to work with you on this project forking or pushing some of your updates to this repo for the benefit of the community.
 
 ## Bugs or issues to solve
 
