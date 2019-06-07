@@ -4,6 +4,8 @@
 
 This is a tool written for Habitat for Humanity Global Village coordinators. It was created for managing team data on a local server or online. 
 
+![Screenshot 01](/docs/screenshots/01.png)
+
 This tool will give you the ability to record basic trip information and other metadata in order to have more detailed registry and reports. For example, I used R to download team and volunteer participation data from the server and created a report for over 20 years of Global Village in El Salvador. I may link to it in a future version, or you can contact me with any of your questions.
 
 ## Features
