@@ -4,6 +4,7 @@
 /config/.env
 /logs/*
 /tmp/*
+/tmp/debug_kit.sqlite
 /vendor/*
 
 # OS generated files #
