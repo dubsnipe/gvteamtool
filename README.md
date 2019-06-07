@@ -2,21 +2,31 @@
 
 ## Description
 
-This is a tool written for Habitat for Humanity Global Village coordinators. It was created for managing team data on a local server or online. 
+This is a tool written for Habitat for Humanity Global Village coordinators. It was created for managing team data on a local server or online. This tool will give you the ability to record basic trip information and other metadata in order to have a detailed database of teams, volunteers and related information, as well as to generate reports based on available data.
 
-![Screenshot 01](/docs/screenshots/01.png)
-
-This tool will give you the ability to record basic trip information and other metadata in order to have more detailed registry and reports. For example, I used R to download team and volunteer participation data from the server and created a report for over 20 years of Global Village in El Salvador. I may link to it in a future version, or you can contact me with any of your questions.
+For example, I used R to download team and volunteer participation data from the server and created a report for over 20 years of Global Village in El Salvador. I may link to it in a future version, or you can contact me with any of your questions.
 
 ## Features
 
-- Team registry with various metadata fields.
-- Volunteer data registry.
-- Tracking of volunteers parts of team and volunteer engagement history.
-- Advanced search of teams by GV code, dates of trip and status (active/cancelled).
-- Advanced filtering of volunteers by name, email address or location.
-- Report generation can be limited by date, type of team or name of team.
-- Ability to upload and convert images by using the `imagine` PHP image editing tool.
+Dashboard
+![Screenshot 01](/docs/screenshots/01.png)
+
+Team calendar
+![Screenshot 03](/docs/screenshots/03.png)
+
+Team registry with various metadata fields
+![Screenshot 06](/docs/screenshots/06.png)
+
+Volunteer tracking and their volunteer engagement history.
+![Screenshot 02](/docs/screenshots/02.png)
+
+Advanced search of teams by GV code, dates of trip and status (active/cancelled), and of volunteers by name, email address or location.
+![Screenshot 04](/docs/screenshots/04.png)
+
+Report generation can be limited by date, type of team or name of team.
+![Screenshot 05](/docs/screenshots/05.png)
+
+Also:
 
 # Project status
 
