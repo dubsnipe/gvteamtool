@@ -160,6 +160,7 @@
     <div class="row padded-top">
         <div class="col">
             <?= $this->Html->link('<i class="material-icons">edit</i>', ['action' => 'edit', $brigada->id], ['class' => 'waves-effect waves-light habitat-blue btn-floating btn-large', 'escape' => false]) ?>
+            <?= $this->Html->link('<i class="material-icons">accessibility</i>', ['action' => 'add_leaders', $brigada->id], ['class' => 'waves-effect waves-light habitat-blue btn-floating btn-large', 'escape' => false]) ?>
         </div>
     </div>
 </div>

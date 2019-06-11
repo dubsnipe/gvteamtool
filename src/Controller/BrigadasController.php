@@ -231,14 +231,14 @@ class BrigadasController extends AppController
             
             if ($this->Brigadas->save($brigada)) {
             
-            if (isset($this->request->data['addLeaders'])) {
-                return $this->redirect(['action' => 'addLeaders', $brigada->id]);
-            } else {
-                $this->Flash->success(__('Your team data has been saved.'));
-                return $this->redirect(['action' => 'view', $brigada->id]);
-            }
+                if (isset($this->request->data['addLeaders'])) {
+                    return $this->redirect(['action' => 'addLeaders', $brigada->id]);
+                } else {
+                    $this->Flash->success(__('Your team data has been saved.'));
+                    return $this->redirect(['action' => 'view', $brigada->id]);
+                }
             
-        }
+            }
             $this->Flash->error(__('Unable to update your team data.'));
         }
         
@@ -328,29 +328,41 @@ class BrigadasController extends AppController
             // return debug($this->request->data);
             // https://github.com/cakephp/cakephp/issues/7864
             
-            if (!empty($this->request->data['voluntarios']['_ids'])) {
-                $vol = [];
-                foreach ($this->request->data['voluntarios']['_ids'] as $key=>$locationId) {
-                    $vol[] = [
-                        'id' => $locationId,
-                        '_joinData' => [
-                            'lider' => isset($this->request->data['voluntarios'][$key]['_joinData']['lider']) ? $this->request->data['voluntarios'][$key]['_joinData']['lider'] : false
-                        ]
-                    ];
-                }
-            }
-            if (isset($vol)){                
-                $this->request->data['voluntarios'] = $vol;
-            }
+            // if (!empty($this->request->data['voluntarios']['_ids'])) {
+                // $vol = [];
+                // foreach ($this->request->data['voluntarios']['_ids'] as $key=>$locationId) {
+                    // $vol[] = [
+                        // 'id' => $locationId,
+                        // '_joinData' => [
+                            // 'lider' => isset($this->request->data['voluntarios'][$key]['_joinData']['lider']) ? $this->request->data['voluntarios'][$key]['_joinData']['lider'] : false
+                        // ]
+                    // ];
+                // }
+            // }
+            // if (isset($vol)){                
+                // $this->request->data['voluntarios'] = $vol;
+            // }
             
             $this->Brigadas->patchEntity($brigada, $this->request->getData());
             // return debug($brigada['voluntarios']);
             // https://stackoverflow.com/questions/37162154/cakephp-3-saving-data-to-a-join-table-and-a-table-associated-to-that-join-table?rq=1
+
+            // if ($this->Brigadas->save($brigada)) {
+                // $this->Flash->success(__('Your team data has been updated.'));
+                // return $this->redirect(['action' => 'view', $id]);
+            // }
+            
             if ($this->Brigadas->save($brigada)) {
-            // return debug($brigada);
-                $this->Flash->success(__('Your team data has been updated.'));
-                return $this->redirect(['action' => 'view', $id]);
+            
+                if (isset($this->request->data['addLeaders'])) {
+                    return $this->redirect(['action' => 'addLeaders', $brigada->id]);
+                } else {
+                    $this->Flash->success(__('Your team data has been saved.'));
+                    return $this->redirect(['action' => 'view', $brigada->id]);
+                }
+            
             }
+            
             $this->Flash->error(__('Unable to update your team data.'));
         }
         

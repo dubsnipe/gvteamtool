@@ -77,6 +77,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             ]); ?>
         </li>
         <li>
+            <?php echo $this->Html->link('Edit', [
+                'controller' => 'Users',
+                'action' => 'edit/',
+            ]); ?>
+        </li>
+        <li>
             <?php echo $this->Html->link('Logout', [
                 'controller' => 'Users',
                 'action' => 'logout',

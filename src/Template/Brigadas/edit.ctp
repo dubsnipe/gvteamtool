@@ -168,46 +168,17 @@
     ?>
 
     <?= $this->Html->link('Add a volunteer', ['controller' => 'Brigadas', 'action' => 'addVolunteersTo', $brigada->id]) ?>
-    
-    <?php 
-    // https://github.com/cakephp/cakephp/issues/3995
-    if (isset($brigada->voluntarios) && count($brigada->voluntarios) > 0){ ?> 
-
-        <h2 class="form-title">Team Leaders</h2>
-
-        <table class="highlight">
-            <?php $all_vol = $brigada->voluntarios;
-            foreach($all_vol as $key=>$voluntario){ ?>
-            <tr>
-                <td><?php echo ($voluntario->full_name); ?></td>
-                <td>
-                    <?php echo $this->Form->control('voluntarios.'.$key.'.id', ['hidden' => false]); ?>
-                    <div class="switch center-align">
-                    <label>
-                    <?php
-                        echo $this->Form->control('voluntarios.'.$key.'._joinData.lider', [
-                            // https://stackoverflow.com/questions/29686111/cakephp-3-0-change-or-remove-wrapping-div-on-input-form
-                            'label' => $voluntario->full_name,
-                            'default'=>'0',
-                            'type' => 'checkbox',
-                            'templates' => ['inputContainer' => '{{content}}'],
-                            'label' => false,
-                        ]); ?>
-                        <span class="lever"></span>
-                    </div>
-                </td>
-            </tr>
-            <?php } ?>
-        </table>
-        
-    <?php } ?>
-    
-    </div>
 
     <div class="section">
         <div class="row padded-top">
             <?php    
                 echo $this->Form->button(__('Save'), ['class' => 'habitat-blue btn-large waves-effect waves-light', 'escape' => false]);
+                echo $this->Form->button(__('Edit leader(s)'), [
+                    'class' => 'habitat-blue darken-1 btn-large waves-effect waves-light', 
+                    'escape' => false, 
+                    'name'=>'addLeaders',
+                    'style' => 'margin: 0 1em;'
+                    ]);
                 
                 echo $this->Form->end();
             ?>

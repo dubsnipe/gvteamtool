@@ -4,8 +4,8 @@ namespace App\Model\Table;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\Validation\Validator;
-
 /**
  * Users Model
  *
@@ -86,11 +86,66 @@ class UsersTable extends Table
             ->notEmpty('username');
 
         $validator
+            ->requirePresence(['password', 're_password'], 'create')
             ->scalar('password')
-            ->maxLength('password', 100)
-            ->requirePresence('password', 'create')
-            ->notEmpty('password');
+            ->scalar('re_password')
+            ->minLength('password', 6)
+            ->maxLength('re_password', 6)
+            ->maxLength('password',30)
+            ->maxLength('re_password', 30)
+            ->notEmpty('password', 're_password')
+            ->add('re_password', [
+                'compareWith' => [
+                    'rule' => ['compareWith', 'password'],
+                    'message' => __("Your password confirmation must match with your password.")
+
+                ]
+            ]);
+            // https://stackoverflow.com/questions/34245778/validation-doesnt-work-cakephp-3        
         
+        $validator
+            ->scalar('current_password')
+            ->scalar('new_password')
+            ->scalar('re_new_password')
+            ->minLength('current_password', 6)
+            ->minLength('new_password', 6)
+            ->minLength('re_new_password', 6)
+            ->maxLength('current_password', 30)
+            ->maxLength('new_password', 30)
+            ->maxLength('re_new_password', 30)
+            ->allowEmpty('new_password', true)
+            ->allowEmpty('re_new_password', true)
+            ->add('current_password','custom',[
+                'rule'=>  function($value, $context){
+                    $user = $this->get($context['data']['id']);
+                    if ($user) {
+                        if ((new DefaultPasswordHasher)->check($value, $user->password)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                },
+                'message'=>'Password does not mach with current password.',
+            ])
+            ->add('new_password','custom',[
+                'rule'=>  function($value, $context){
+                    $user = $this->get($context['data']['id']);
+                    if ($user) {
+                        if ((new DefaultPasswordHasher)->check($value, $user->password)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                },
+                'message'=>'New password should not mach with current one.',
+            ])
+            ->add('re_new_password', [
+                'compareWith' => [
+                    'rule' => ['compareWith', 'new_password'],
+                    'message' => __("New passwords do not match.")
+                ]
+            ]);
+
         $validator
             ->scalar('remember_token')            
             ->allowEmpty('password');

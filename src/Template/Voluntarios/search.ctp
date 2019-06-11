@@ -10,7 +10,7 @@
 <div id="search-advanced" class="search-control row white section container-2 z-depth-1">
     <form role="search">
             
-            <!--<div class="col s6">
+            <div class="col s6">
                 <label for="firstName">First Name</label>
                 <input class="validate" type="search" id="firstName" name="firstName" value="<?php echo(isset($_GET['firstName']) ? $_GET['firstName'] : ""); ?>" placeholder="First name">
             </div>
@@ -19,12 +19,12 @@
             <div class="col s6">
                 <label for="lastName">Last Name</label>
                 <input class="validate" type="search" id="lastName" name="lastName" placeholder="Last name" value="<?php echo(isset($_GET['lastName']) ? $_GET['lastName'] : ""); ?>">
-            </div> -->
+            </div>
            
-            <div class="col s12">
+            <!-- <div class="col s12">
                 <label for="full_name">Name</label>
                 <input id="full_name" name="full_name" type="text" placeholder="First or last name" oninput="check(this.value)">
-            </div>
+            </div> -->
             
             <div class="col s6">
                 <label for="gender">Gender</label>

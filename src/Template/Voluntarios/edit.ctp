@@ -178,5 +178,16 @@
             echo $this->Form->button(__('Save'), ['class' => 'habitat-blue btn-large waves-effect waves-light', 'escape' => false]);
             echo $this->Form->end(); 
         ?>
+        
+        <?= $this->Form->postLink(
+                '<i class="material-icons">delete</i>',
+                ['action' => 'delete', $voluntario->id],
+                [
+                    'class' => 'waves-effect waves-light habitat-brick btn-floating btn-large right', 
+                    'title' => 'Delete',
+                    'confirm' => 'Do you really want to delete this volunteer and participations?',
+                    'escape' => false, 
+                ]
+        ) ?>
     </div>        
 </div>

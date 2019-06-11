@@ -87,6 +87,7 @@ class StatsController extends AppController
         $graph->select(['count' => $graph->func()->count('id'), 'year' => 'YEAR(arrival)', 'month' => 'MONTH(arrival)']);
         $graph->where([
             'YEAR(arrival) >' => date('Y')-1,
+            'YEAR(arrival) <' => date('Y')+1,
             'status' => true,
             ]);
         $graph->group(['YEAR(arrival)','MONTH(arrival)']);
@@ -173,8 +174,7 @@ public function search(){
             $temp[] += $q['team_members'];
             }
         }
-        
-        
+                
         if (count($temp)>0){
             $queryMembers = array_sum($temp) / count($temp);
         } else {

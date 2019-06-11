@@ -174,13 +174,13 @@ class VoluntariosTable extends Table
 
         $validator
             ->scalar('firstName')
-            ->maxLength('firstName', 255);
-            // ->allowEmpty('firstName');
+            ->maxLength('firstName', 255)
+            ->notEmpty('firstName');
 
         $validator
             ->scalar('lastName')
-            ->maxLength('lastName', 255);
-            // ->allowEmpty('lastName');
+            ->maxLength('lastName', 255)
+            ->notEmpty('lastName');
 
         $validator
             // Eliminado por errores. Ver Vol #218

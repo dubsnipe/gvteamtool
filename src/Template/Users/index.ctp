@@ -4,15 +4,15 @@
  * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
-<nav class="habitat-grey habitat-blue-text z-depth-0" id="">
+<nav class="habitat-blue white-text z-depth-0" id="">
     <ul class="side-nav container">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
+        <li class="habitat-blue darken-1"><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="white section container">
-    <h3><?= __('Users') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+
+<div class="section container">
+    <h1><?= __('Users') ?></h1>
+    <table class="z-depth-1">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -26,7 +26,7 @@
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="white">
             <?php foreach ($users as $user): ?>
             <tr>
                 <td><?= $this->Number->format($user->id) ?></td>
@@ -39,8 +39,12 @@
                 <td><?= h($user->rol) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                    <?php if($role == 'admin'){
+                        echo $this->Html->link(__('Edit'), ['action' => 'editUser', $user->id]);
+                    } ?>
+                    <?php if($role == 'admin'){
+                        echo $this->Html->link(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete {0} {1} (id=#{2})?', $user->first_name, $user->last_name, $user->id)]);
+                    } ?>
                 </td>
             </tr>
             <?php endforeach; ?>
