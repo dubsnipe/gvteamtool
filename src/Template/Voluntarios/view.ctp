@@ -162,11 +162,6 @@
                 'escape' => false
             ]) ?>
             
-            <?= $this->Form->postLink('<i class="material-icons">delete</i>', 
-            ['action' => 'delete', $voluntario->id], [
-                'class' => 'waves-effect waves-light habitat-brick btn-floating btn-large', 
-                'escape' => false
-            ], ['confirm' => 'Are You Sure?','class' => 'button']) ?>
         </div>
     </div>
 </div>

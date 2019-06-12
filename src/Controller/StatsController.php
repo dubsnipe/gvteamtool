@@ -23,7 +23,7 @@ class StatsController extends AppController
         
         if (isset($user['rol']) && $user['rol'] === 'admin' ||
             isset($user['rol']) && $user['rol'] === 'manager' ) {
-            $this->Auth->allow(['index', 'add', 'view', 'search']);
+            $this->Auth->allow(['index', 'add', 'view', 'search', 'export', 'exportVoluntarios']);
             // return true;
             
         }elseif(isset($user['rol']) && $user['rol'] === 'user'){
@@ -37,7 +37,7 @@ class StatsController extends AppController
     }
 
  
-    public function index() {
+public function index() {
         $helpers = array('Js' => 'Jquery');
         $brigadas = TableRegistry::getTableLocator()->get('Brigadas');
         $voluntarios = TableRegistry::getTableLocator()->get('Voluntarios');
@@ -349,20 +349,6 @@ public function exportVoluntarios()
     $this->viewBuilder()->setClassName('CsvView.Csv');
     $this->set(compact('data', '_serialize', '_header'));
 }
-
-// public function exportTeam()
-// {
-    // $voluntarios = TableRegistry::getTableLocator()->get('Voluntarios');
-    // $data = $voluntarios
-            // ->find('search', ['search' => $this->request->getQueryParams()])
-            // ->select(['firstName', 'middleName', 'lastName', 'gender', 'city', 'address', 'residenceCountry', 'email']);
-
-    // $_serialize = 'data';
-    // $_header = ['First Name', 'Middle Name', 'Last Name', 'Gender', 'City', 'Address', 'Country', 'Email'];
-
-    // $this->viewBuilder()->setClassName('CsvView.Csv');
-    // $this->set(compact('data', '_serialize', '_header'));
-// }
 
     
 }
